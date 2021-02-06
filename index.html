@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>animacija</title>
+        <style>
+            body {
+                margin: 100px auto;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: #050210;
+            }
+            @keyframes glowing {
+                from{
+                    transform: rotate(0deg);
+                }
+                to {
+                    transform: rotate(360deg);
+                }
+
+            }
+            #glow{
+                position: relative;
+                width: 450px;
+                height: 450px;
+                background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+                border-radius: 50%;
+                animation: glowing 1s linear both infinite;
+
+            }
+
+            @keyframes pulsing {
+                from{
+                    transform: scale(0.2, 0.2);
+                }
+                to{
+                    transform: scale(0.9, 0.9);
+                }
+            }
+            #glow::after{
+                content: '';
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                bottom: 20px;
+                left: 20px;
+    
+                background-color: rgb(15, 10, 24);
+               /* filter: opacity(100%);*/
+                border-radius: 50%;
+                animation: pulsing 1s ease-out infinite;
+
+                
+            }
+             
+            
+
+            #glow span{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
+                border-radius: 50%;
+
+            }
+            #glow span:nth-child(1){
+                filter: blur(5px);
+            }
+            #glow span:nth-child(2){
+                filter: blur(4px);
+            }
+            #glow span:nth-child(3){
+                filter: blur(20px);
+            }
+            #glow span:nth-child(4){
+                filter: blur(55px);
+            }
+
+            #pulse{
+                position: absolute;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                bottom: 20px;
+                left: 20px;
+                border-radius: 50%;
+                background-color: black;
+                 
+                
+
+            }
+
+        
+            
+        </style>
+    </head>
+
+    <body>
+        <div id="glow">
+            
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <div id="pulse"></div>
+        </div>
+    </body>
+
+</html>
